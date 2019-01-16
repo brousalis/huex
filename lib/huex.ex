@@ -1,5 +1,7 @@
 defmodule Huex do
 
+  alias Jason, as: JSON
+
   @moduledoc """
 
   Elixir client for Philips Hue connected light bulbs.
@@ -413,7 +415,7 @@ defmodule Huex do
   end
 
   defp encode_request(data) do
-    {:ok, json} = Poison.encode(data)
+    {:ok, json} = JSON.encode(data)
     json
   end
 
@@ -423,7 +425,7 @@ defmodule Huex do
   defp handle_response({:error, %HTTPoison.Error{reason: reason}}), do: {:error, reason}
 
   defp decode_response_body(body) do
-    {:ok, object} = Poison.decode(body)
+    {:ok, object} = JSON.decode(body)
     object
   end
 
