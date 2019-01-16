@@ -33,7 +33,7 @@ defmodule Huex.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 1.5.0"},
-      {:poison, "~> 3.0"},
+      {:jason, "~> 1.1"},
       {:nerves_ssdp_client, "~> 0.1", optional: true},
       {:exvcr, "~> 0.10.3", only: :test},
       {:earmark, "~> 1.0", only: :dev},
